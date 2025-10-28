@@ -1,0 +1,102 @@
+<section class="hero">
+  <div class="hero-background">
+    <div class="cosmic-shape shape-1"></div>
+    <div class="cosmic-shape shape-2"></div>
+    <div class="cosmic-shape shape-3"></div>
+  </div>
+  
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-left">
+        <h1 class="hero-title">
+          Learn Skills
+          <span class="highlight">at Any Age</span>
+        </h1>
+        <p class="hero-subtitle">
+          Join EduVerse — the educational universe where you can start your journey.
+        </p>
+        
+        <div class="hero-buttons">
+          <button class="btn-primary-large">
+            <svg class="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M10 2L3 7V13C3 16.31 5.69 19.5 10 20.5C14.31 19.5 17 16.31 17 13V7L10 2Z" 
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7 10L9 12L13 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Join a Free Lesson
+          </button>
+          <a routerLink="/programs" class="btn-secondary-large">
+            View Programs
+            <svg class="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M5 10H15M15 10L10 5M15 10L10 15" 
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="hero-right">
+        <div class="signup-card">
+          <div class="card-header">
+            <h3>Start Your Journey Today</h3>
+            <p>Sign up for a free trial lesson</p>
+          </div>
+          
+          <form class="signup-form" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name"
+                placeholder="Enter your name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="contact">Email or Phone</label>
+              <div class="phone-input">
+                <span class="country-code">+1</span>
+                <input 
+                  type="text" 
+                  id="contact" 
+                  name="contact"
+                  placeholder="(000) 000-00-00"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="program">Select a Program</label>
+              <select 
+                id="program" 
+                name="program"
+                required
+              >
+                <option value="" disabled selected>Choose your interest</option>
+                <option *ngFor="let subject of subjects" [value]="subject.id">
+                  {{ subject.name }}
+                </option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn-submit">
+              Sign Up for Free Lesson
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M5 10H15M15 10L10 5M15 10L10 15" 
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+
+            <p class="form-note">
+              By signing up, you agree to our data processing policy
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

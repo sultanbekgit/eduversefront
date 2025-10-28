@@ -1,0 +1,47 @@
+<section class="programs">
+  <div class="container">
+    <div class="programs-header">
+      <h1 class="programs-title">Our Programs</h1>
+      <p class="programs-subtitle">Choose from our diverse range of educational courses</p>
+    </div>
+
+    <div class="loading-spinner" *ngIf="loading">
+      <div class="spinner"></div>
+      <p>Loading programs...</p>
+    </div>
+
+    <div class="programs-grid" *ngIf="!loading">
+      <div class="program-card" *ngFor="let subject of subjects">
+        <div class="card-icon">{{ getIcon(subject.name) }}</div>
+        <h3 class="card-title">{{ subject.name }}</h3>
+        <div class="card-footer">
+          <button class="btn-details" (click)="viewDetails(subject)">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M8 1C4.13 1 1 4.13 1 8C1 11.87 4.13 15 8 15C11.87 15 15 11.87 15 8C15 4.13 11.87 1 8 1Z" 
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 11V8M8 5H8.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Подробнее
+          </button>
+          <button class="btn-enroll">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M8 2L2 6V10C2 12.5 4 14.5 8 15C12 14.5 14 12.5 14 10V6L8 2Z" 
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 8L7.5 9.5L10 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Записаться
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="empty-state" *ngIf="!loading && subjects.length === 0">
+      <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+        <path d="M32 8L8 20V36C8 46 16 54 32 56C48 54 56 46 56 36V20L32 8Z" 
+              stroke="#ccc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h3>No Programs Available</h3>
+      <p>Please check back later for available programs.</p>
+    </div>
+  </div>
+</section>

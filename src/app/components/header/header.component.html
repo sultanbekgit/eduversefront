@@ -1,0 +1,32 @@
+<header class="header">
+  <div class="container">
+    <div class="logo" routerLink="/home">
+      <img src="/symbol_brand.png" alt="EduVerse Logo" class="logo-image"  />
+      <span class="brand-text">EduVerse</span>
+    </div>
+    <nav class="nav">
+      <div class="dropdown">
+        <button class="nav-link" (click)="toggleDropdown()">
+          Explore
+          <svg class="dropdown-icon" [class.rotate]="isDropdownOpen" width="12" height="8" viewBox="0 0 12 8" fill="none">
+            <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="dropdown-menu" *ngIf="isDropdownOpen">
+          <a href="#" class="dropdown-item" *ngFor="let subject of subjects" (click)="closeDropdown()">
+            <svg class="item-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M2 8L6 12L14 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            {{ subject.name }}
+          </a>
+        </div>
+      </div>
+      <a routerLink="/programs" class="nav-link">Programs</a>
+      <a href="#" class="nav-link">About</a>
+      <a href="#" class="nav-link">Contact</a>
+      <div class="nav-actions">
+        <button class="btn-secondary">Sign In</button>
+      </div>
+    </nav>
+  </div>
+</header>
