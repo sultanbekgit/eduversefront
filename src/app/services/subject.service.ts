@@ -7,7 +7,7 @@ import { Subject } from '../models/subject.model';
   providedIn: 'root'
 })
 export class SubjectService {
-  private apiUrl = 'http://localhost:5556/api/subjects';
+  private apiUrl = 'https://eduverse-4nps.onrender.com/api/subjects';
 
   constructor(private http: HttpClient) { }
 
